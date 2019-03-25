@@ -1,7 +1,6 @@
-// open this web page
+##open this web page
 from flask import Flask, render_template, request
-
-    import requests
+import requests
 
 
 app = Flask("MyApp")
