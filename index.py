@@ -6,8 +6,10 @@ app = Flask("MyApp")
 def hello():
     return render_template("index.html")
 
-@app.route("/contact-us")
-def hello():
-    return render_template("contact_us.html")
+@app.route("/contact_us", methods=[POST])
+def sign_ups():
+    form_data = request.form
+    print (form_dats["email"])
+    return "All OK"
 
 app.run(debug=True)
