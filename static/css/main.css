@@ -33,12 +33,13 @@ body {
   text-align: justify;
 }
 
-/******** CARD DECK STYLING *******/
+/******** CARD DECK (FOOD ICON) STYLING *******/
+/* Styling the cards - where the food goes */
 .card {
   border: none;
-  border-bottom: 4vh #fff solid;
+  border-bottom: 4vh rgb(255,255,255) solid;
 }
-
+/* Styling the image icons */
 .card img {
   opacity: 1;
   display: block;
@@ -48,6 +49,7 @@ body {
   padding: 10px;
 }
 
+/* Category title positioning */
 .card-body {
   transition: .2s ease;
   opacity: 0;
@@ -58,7 +60,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-
+/* Hover transition */
 .card:hover img {
   opacity: 0.7;
   filter: blur(2px);
@@ -79,4 +81,11 @@ body {
 /******** FOOTER STYLING *******/
 .foottopia {
   margin-bottom: 0px;
+}
+
+/* Link styling */
+.foottopia a:link, a:visited, a:hover, a:active {
+  color:rgba(206,10,49,1);
+  color:rgb(206,10,49); /* IE9 Backup */
+  text-decoration: none;
 }
