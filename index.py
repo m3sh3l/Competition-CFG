@@ -7,9 +7,9 @@ def hello():
     return render_template("index.html")
 
 @app.route("/contact_us", methods=["POST"])
-def sign_ups():
+def contact_us():
     form_data = request.form
-    print (form_dats["email"])
+    print (form_data["email"])
     return "All OK"
 
 app.run(debug=True)
