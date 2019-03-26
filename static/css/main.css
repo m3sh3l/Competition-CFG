@@ -80,7 +80,10 @@ body {
 
 /******** FOOTER STYLING *******/
 .foottopia {
-  margin-bottom: 0px;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+  bottom: 0;
 }
 
 /* Link styling */
