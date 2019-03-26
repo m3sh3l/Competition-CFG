@@ -3,9 +3,12 @@
 /* UNIVERSITY OF BATH, MARCH 2019 */
 
 /***** GENERAL TEXT FONT *****/
-body {
+html, body {
   background:#fff;
   font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 /****** NAVBAR STYLING *****/
@@ -81,9 +84,10 @@ body {
 /******** FOOTER STYLING *******/
 .foottopia {
   text-align: center;
-  position: fixed;
-  margin: auto;
-  bottom: 0;
+}
+
+.foottopia2 {
+  margin-bottom: 0;
 }
 
 /* Link styling */
