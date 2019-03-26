@@ -5,6 +5,7 @@ app = Flask("MyApp")
 @app.route("/")
 def hello():
     return render_template("index.html")
+
 # Load Contact Us page
 @app.route("/contact_us")
 def contact_page():
@@ -17,4 +18,7 @@ def contact_us():
     print (form_data["email"])
     return "All OK"
 
+# To Cathy: Modify contact_us function with the mailgun API.
+
+# Run app if application is debugged
 app.run(debug=True)
