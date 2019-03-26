@@ -1,3 +1,7 @@
+# Import requests
+import requests
+
+# Import Flask
 from flask import Flask, render_template, request
 
 app = Flask("MyApp")
@@ -19,7 +23,6 @@ def contact_us():
     return "All OK"
 
 # To Cathy: Modify contact_us function with the mailgun API.
-import requests
 
 def send_simple_message():
 	return requests.post(
