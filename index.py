@@ -30,10 +30,10 @@ def send_simple_message():
     return requests.post(
 		"https://api.mailgun.net/v3/sandboxfa96724b71f040c88fa450724763469b.mailgun.org/messages",
 		auth=("api", "0f7face814c7c77bbb1535e843dbe29d-de7062c6-e7c48a8e"),
-		data={"from": "Excited User <postmaster@sandboxfa96724b71f040c88fa450724763469b.mailgun.org>",
+		data={"from": "Foodtopia <postmaster@sandboxfa96724b71f040c88fa450724763469b.mailgun.org>",
 			"to": form_data["email"],
-			"subject": "Helloooooooooooooooo",
-			"text": "Testing some Mailgun awesomness!"})
+			"subject": "Contact us here",
+			"text": "Hello new user, feel free to contact us on this email"})
 
 
 # Run app if application is debugged
