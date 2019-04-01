@@ -27,7 +27,7 @@ def contact_us():
     form_data = request.form
     print (form_data["email"])
     send_simple_message()
-    return hello()
+    return thanks_page()
 
 # To Cathy: Modify contact_us function with the mailgun API.
 
@@ -41,6 +41,9 @@ def send_simple_message():
 			"subject": "Contact us here",
 			"text": "Hello new user, feel free to contact us on this email"})
 
+@app.route("/thank_you")
+def thanks_page():
+    return render_template("ThankYou.html")
 
 # Run app if application is debugged
 app.run(debug=True)
