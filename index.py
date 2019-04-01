@@ -13,10 +13,29 @@ app = Flask("MyApp")
 def hello():
     return render_template("index.html")
 
+def getRecipeByIngredients(dish):
+    payload = {
+        'fillIngredients': False,
+        'ingredients': dish,
+        'limitLicense': False,
+        #'number': 5,
+        #'ranking': 1
+    }
+
+    api_key = "c7135f2f8bmsh9b6b78982ba931fp135282jsn85ad20e4d037"
+    endpoint = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients"
+    headers={
+        "X-Mashape-Key": "c7135f2f8bmsh9b6b78982ba931fp135282jsn85ad20e4d037",
+    }
+    r = requests.get(endpoint, params=payload, headers=headers)
+    results = r.json()
+    return results
+
 # load recipe page
 @app.route("/<dish>")
 def recipe(dish):
-    return render_template("recipe.html" , dish=dish.title())
+    results = getRecipeByIngredients(dish)
+    return render_template("recipe.html" , dish=dish.title(), results=results)
 
 # Load Contact Us page
 @app.route("/contact_us")
@@ -50,29 +69,3 @@ def thanks_page():
 # Run app if application is debugged
 app.run(debug=True)
 app.run(port = 5000)
-
-def getRecipeByIngredients(ingredients):
-    payload = {
-        'fillIngredients': False,
-        'ingredients': ingredients,
-        'limitLicense': False,
-        #'number': 5,
-        #'ranking': 1
-    }
-
-    api_key = "c7135f2f8bmsh9b6b78982ba931fp135282jsn85ad20e4d037"
-
-    endpoint = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients"
-
-
-    headers={
-        "X-Mashape-Key": "c7135f2f8bmsh9b6b78982ba931fp135282jsn85ad20e4d037",
-
-    }
-
-    r = requests.get(endpoint, params=payload, headers=headers)
-    results = r.json()
-    i = 0
-    for i in range(len(results)):
-        title = results[i]['title']
-        print(title)
