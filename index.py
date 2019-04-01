@@ -20,19 +20,22 @@ def contact_page():
 def contact_us():
     form_data = request.form
     print (form_data["email"])
-    return "All OK"
+    send_simple_message()
+    return hello()
 
 # To Cathy: Modify contact_us function with the mailgun API.
 
 def send_simple_message():
-	return requests.post(
-		"https://api.mailgun.net/v3/sandboxae7220a00ff84c7ca7fe2dc6f566a5ed.mailgun.org/messages",
-		auth=("api", "a9b68955e996430e41e4303d25eb50cd-de7062c6-302dc37f"),
-		data={"from": "Excited User <mailgun@sandboxae7220a00ff84c7ca7fe2dc6f566a5ed.mailgun.org>",
-			"to": [form_data["email"]],
+    form_data = request.form
+    return requests.post(
+		"https://api.mailgun.net/v3/sandboxfa96724b71f040c88fa450724763469b.mailgun.org/messages",
+		auth=("api", "0f7face814c7c77bbb1535e843dbe29d-de7062c6-e7c48a8e"),
+		data={"from": "Excited User <postmaster@sandboxfa96724b71f040c88fa450724763469b.mailgun.org>",
+			"to": form_data["email"],
 			"subject": "Helloooooooooooooooo",
 			"text": "Testing some Mailgun awesomness!"})
 
 
 # Run app if application is debugged
 app.run(debug=True)
+app.run(port = 5000)
