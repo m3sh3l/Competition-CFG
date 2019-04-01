@@ -10,6 +10,11 @@ app = Flask("MyApp")
 def hello():
     return render_template("index.html")
 
+# load recipe page
+@app.route("/<dish>")
+def recipepage(dish):
+    return render_template("dish.html" )
+
 # Load Contact Us page
 @app.route("/contact_us")
 def contact_page():
