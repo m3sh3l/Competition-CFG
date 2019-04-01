@@ -5,6 +5,7 @@ import requests
 from flask import Flask, render_template, request
 
 app = Flask("MyApp")
+
 # Load index.html
 @app.route("/")
 def hello():
@@ -12,8 +13,8 @@ def hello():
 
 # load recipe page
 @app.route("/<dish>")
-def recipepage(dish):
-    return render_template("dish.html" )
+def recipe(dish):
+    return render_template("recipe.html" , dish=dish.title())
 
 # Load Contact Us page
 @app.route("/contact_us")
